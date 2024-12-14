@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Digital Clock</title>
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 text-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gray-900 bg-opacity-80 shadow-md p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Elite Digital Clock</h1>
+        <button id="menu-btn" class="p-2 rounded-md bg-gray-800 bg-opacity-60 hover:bg-opacity-40 transition">Menu</button>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-gray-800 bg-opacity-90 transform -translate-x-full shadow-lg transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex flex-col h-full">
+            <button id="close-btn" class="text-white mb-4 self-end hover:text-gray-300 transition">&times;</button>
+            <nav class="flex flex-col space-y-4">
+                <a href="#" class="text-xl text-white p-2 rounded hover:bg-gray-600 hover:bg-opacity-60 transition">Home</a>
+                <a href="#" class="text-xl text-white p-2 rounded hover:bg-gray-600 hover:bg-opacity-60 transition">Settings</a>
+                <a href="#" class="text-xl text-white p-2 rounded hover:bg-gray-600 hover:bg-opacity-60 transition">History</a>
+                <a href="#" class="text-xl text-white p-2 rounded hover:bg-gray-600 hover:bg-opacity-60 transition">Contact</a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+        <div id="container" class="flex justify-center items-center w-11/12 max-w-4xl">
+            <div id="clock" class="flex justify-center items-center font-mono text-6xl font-bold text-aqua backdrop-blur-sm w-full p-8 bg-white bg-opacity-20 border border-opacity-30 rounded-lg shadow-2xl">
+                00:00:00
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-80 shadow-md p-4 mt-auto flex justify-center items-center">
+        <nav class="flex space-x-4">
+            <a href="#" class="hover:text-gray-300 transition">Privacy Policy</a>
+            <a href="#" class="hover:text-gray-300 transition">Terms of Service</a>
+            <a href="#" class="hover:text-gray-300 transition">Contact Us</a>
+        </nav>
+    </footer>
+
+    <script src="digital-clock.js"></script>
+    <script>
+        // Toggle Sidebar
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>
